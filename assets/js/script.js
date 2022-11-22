@@ -17,10 +17,24 @@ function generatePassword (){
     var isLowerCase = confirm ("Do you want any lowercase letters?");
     var isNumbers = confirm ("Do you want any numbers?");
     var isSymbol = confirm ("Do you want any symbols?");
+    console.log();
 
     // Generating a string of symbols
     var finalPassword = '';
-    var allsymbols = lowerCase + upperCase + numbers + symbols;
+    var allsymbols = '';
+
+    if (isUpperCase){
+        allsymbols += upperCase;
+    }
+    if (isLowerCase){
+        allsymbols += lowerCase;
+    }
+    if (isNumbers){
+        allsymbols += numbers;
+    }
+    if (isSymbol){
+        allsymbols += symbols;
+    }
 
     for (var i = 0; i < Number(passwordLength); i++){
         var randomNumber = Math.floor(Math.random() * allsymbols.length);
