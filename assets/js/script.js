@@ -4,9 +4,15 @@ function generatePassword() {
     "Choose a length of your password. It should be minimum 8 and maximum 128 characters."
   );
   if (passwordLength < 8 || passwordLength > 128) {
-    alert("Error");
-    return;
-  }
+    alert("Not correct password length. Choose again");	
+		finalPassword = "Wrong password length";
+		return finalPassword;	
+    //return;
+		 
+  } else if (!passwordLength) {
+		alert("Choose password length again");
+		return;
+	}
 
   //Variables for variants of password
   var lowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -45,7 +51,7 @@ function generatePassword() {
   //checking of there is no any entry
   if (!isUpperCase && !isLowerCase && !isNumbers && !isSymbol) {
     finalPassword = "Make your choise again";
-  }
+  } 
   return finalPassword;
 }
 
